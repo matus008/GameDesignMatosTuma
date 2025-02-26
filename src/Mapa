@@ -1,18 +1,11 @@
-1. Ulice - (Domov,Qagmira dum, Joye dum, Clevlanduv dum, Herbertuv dum,
-            Vrazda Chrise)
-
-2. Domov - (Zahrada, Ulice)
-   2.1 Zahrada - (Domov)
-
-3. Qagmira dum - (Skryty sklep, Ulice)
-   3.1 Skryty sklep - (Qagmira dum)
-
-4. Joye dum - (Ulice)
-
-5. Clevlanduv dum - (Ulice)
-
-6. Herbertuv dum - (Ulice, Sklep, Zahrada)
-   6.1 Sklep - (Herbertuv dum)
-   6.2 Zahrada - (Herbertuv dum)
-
-7.Vrazda Chrise - (Ulice)
+1. Ulice - (Domov,Qagmira dum, Joye dum, Clevlanduv dum, Herbertuv dum,Vrazda Chrise);
+2. Domov - (Zahrada, Ulice);
+   2.1 Zahrada - (Domov);
+3. Qagmira dum - (Skryty sklep, Ulice);
+   3.1 Skryty sklep - (Qagmira dum);
+4. Joye dum - (Ulice);
+5. Clevlanduv dum - (Ulice);
+6. Herbertuv dum - (Ulice, Sklep, Zahrada);
+   6.1 Sklep - (Herbertuv dum);
+   6.2 Zahrada - (Herbertuv dum);
+7.Vrazda Chrise - (Ulice);
