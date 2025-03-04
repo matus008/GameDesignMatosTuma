@@ -10,4 +10,8 @@ public class Room {
         this.possibles = possibles;
         this.roomNumber = roomNumber;
     }
+
+    public ArrayList<Integer> getPossibles() {
+        return possibles;
+    }
 }
