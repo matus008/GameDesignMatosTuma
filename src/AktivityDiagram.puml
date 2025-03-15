@@ -1,0 +1,53 @@
+@startuml
+start
+:Start hry;
+:Inicializace postav a inventáře;
+
+repeat
+  :Hráč se pohybuje po mapě;
+  if (Hráč vstoupí do nové lokace?) then (ano)
+    :Aktualizace prostředí;
+  endif
+
+  if (Hráč narazí na NPC?) then (ano)
+    :Spustí se dialog;
+    if (Hráč zvolí správné odpovědi?) then (ano)
+      :Získání informací/důkazů;
+    else (ne)
+      :NPC reaguje negativně;
+    endif
+  endif
+
+  if (Hráč najde předmět?) then (ano)
+    :Přidání předmětu do inventáře;
+  endif
+
+  if (Hráč narazí na překážku?) then (ano)
+    if (Hráč má správný předmět?) then (ano)
+      :Použití předmětu;
+      if (Překážka odstraněna?) then (ano)
+        :Přístup k nové oblasti nebo důkazu;
+      endif
+    else (ne)
+      :Hráč musí najít správný předmět;
+    endif
+  endif
+
+  if (Hráč prohledává lokace?) then (ano)
+    :Získání důkazů;
+  endif
+
+  if (Hráč se bavil se svědky nehody?) then (ano)
+    if (Hráč má všechny důkazy?) then (ano)
+      :Hráč odhalí pachatele;
+      stop
+    endif
+  else (ne)
+    :Hráč musí najít a vyslechnout svědky;
+  endif
+
+repeat while (Hráč není v nebezpečí)
+
+:Game Over (Stewie byl odhalen nebo neuspěl);
+stop
+@enduml
