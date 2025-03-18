@@ -5,6 +5,7 @@ public class Presun implements Command {
     public Presun(Room misto, Hrac hrac) {
         this.misto = misto;
         this.hrac = hrac;
+
     }
 
     @Override

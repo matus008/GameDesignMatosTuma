@@ -1,10 +1,10 @@
-public class Npc {
+public abstract class Npc {
    private final String jmeno;
-   private final String promuv;
+   private  String promuv;
 
-    public Npc(String jmeno, String promuv) {
+    public Npc(String jmeno) {
         this.jmeno = jmeno;
-        this.promuv = promuv;
+
     }
 
     public String getJmeno() {
@@ -14,4 +14,10 @@ public class Npc {
     public String getPromuv() {
         return promuv;
     }
+
+    public void setPromuv(String promuv) {
+        this.promuv = promuv;
+    }
+
+    public abstract void setPromuv();
 }

@@ -1,5 +1,10 @@
 public class Brian extends Npc{
-    public Brian(String jmeno, String promuv) {
-        super(jmeno, promuv);
+    public Brian(String jmeno) {
+        super(jmeno);
+    }
+
+    @Override
+    public void setPromuv() {
+
     }
 }

@@ -1,6 +1,11 @@
 public class Quagmiere extends Npc {
 
-    public Quagmiere(String jmeno, String promuv) {
-        super(jmeno, promuv);
+    public Quagmiere(String jmeno) {
+        super(jmeno);
+    }
+
+    @Override
+    public void setPromuv() {
+
     }
 }

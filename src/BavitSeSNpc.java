@@ -1,14 +1,15 @@
 public class BavitSeSNpc implements Command {
-    private Npc npc;
+    private Npc npcc;
 
     public BavitSeSNpc(Npc npc) {
-        this.npc = npc;
+        this.npcc = npc;
     }
 
     @Override
     public String Execute() {
-        System.out.println("Mluvíš s " + npc.getJmeno());
-        return npc.getPromuv();
+        npcc.setPromuv();
+        System.out.println("Mluvíš s " + npcc.getJmeno() );
+        return npcc.getPromuv();
     }
 
 

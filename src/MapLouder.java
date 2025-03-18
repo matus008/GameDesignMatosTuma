@@ -23,8 +23,6 @@ public class MapLouder {
                 }
                 streetMap.put(number, new Room( name, possibles,number));
             }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -46,4 +44,7 @@ public class MapLouder {
 
     }
 
+    public static int getCurrentRoom() {
+        return currentRoom;
+    }
 }

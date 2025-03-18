@@ -7,6 +7,7 @@ public class Hrac {
 
     public Hrac() {
         this.currentRoom = null;
+        inventar = new ArrayList<>();
 
     }
 
@@ -18,8 +19,10 @@ public class Hrac {
     public boolean vzitItemDoInventare(Item item){
         return true;
     }
-    public void sebratDukaz(){}
-    public String prohledatMistnost(){
+    public void sebratDukaz(){
+
+    }
+    public String prohledatMistnost(Room room){
         return "Nasel jsi:";
     }
     public boolean moveTo(Room room){

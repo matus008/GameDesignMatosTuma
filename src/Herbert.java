@@ -1,5 +1,10 @@
 public class Herbert extends Npc {
-    public Herbert(String jmeno, String promuv) {
-        super(jmeno, promuv);
+    public Herbert(String jmeno) {
+        super(jmeno);
+    }
+
+    @Override
+    public void setPromuv() {
+
     }
 }

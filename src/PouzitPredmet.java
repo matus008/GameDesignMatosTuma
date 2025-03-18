@@ -4,13 +4,13 @@ public class PouzitPredmet implements Command {
     private Hrac hrac;
 
     public PouzitPredmet(Item predmet, Hrac hrac) {
-        this.predmet = predmet;
+        this.predmet = new Kladivo("kladivo");
         this.hrac = hrac;
     }
 
     @Override
     public String Execute() {
-        return "Používáš předmět: " + predmet.getNazevVeci() + hrac.useItem(predmet);
+        return "Používáš předmět: " + predmet.getNazevVeci() + " - " +  hrac.useItem(predmet);
     }
 
     @Override

@@ -3,13 +3,10 @@ public class Prohledat implements Command {
     private Room lokace;
     private Hrac hrac;
 
-    public Prohledat(Room lokace) {
-        this.lokace = lokace;
-    }
 
     @Override
     public String Execute() {
-        return "Prohledáváš: " + lokace.getRoomName() + hrac.prohledatMistnost();
+        return "Prohledáváš: " + lokace.getRoomName() + hrac.prohledatMistnost(this.lokace);
     }
 
     @Override
