@@ -1,6 +1,4 @@
-package TridySCommand;
-
-public class PouzitPredmet extends Command{
+public class Exit implements Command {
     @Override
     public String Execute() {
         return "";
@@ -8,6 +6,6 @@ public class PouzitPredmet extends Command{
 
     @Override
     public boolean exit() {
-        return false;
+        return true;
     }
 }

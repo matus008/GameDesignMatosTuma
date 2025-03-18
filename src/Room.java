@@ -14,4 +14,12 @@ public class Room {
     public ArrayList<Integer> getPossibles() {
         return possibles;
     }
+
+    public String getRoomName() {
+        return roomName;
+    }
+
+    public int getRoomNumber() {
+        return roomNumber;
+    }
 }

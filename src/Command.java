@@ -1,8 +1,6 @@
-package TridySCommand;
-
 public interface Command {
 
-     String Execute();
+    String Execute();
       boolean exit();
 
 }

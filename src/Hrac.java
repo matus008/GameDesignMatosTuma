@@ -3,16 +3,27 @@ import java.util.ArrayList;
 public class Hrac {
     private ArrayList<Item> inventar;
     private String jmeno;
-    public void bavitSeSNpc(){
+    private Room currentRoom;
+
+    public Hrac() {
+        this.currentRoom = null;
 
     }
+
+    public boolean useItem(Item item) {
+        inventar.remove(item);
+        return true;
+    }
+    public void bavitSeSNpc(){}
     public boolean vzitItemDoInventare(Item item){
         return true;
     }
-    public void sebratDukaz(){
-
+    public void sebratDukaz(){}
+    public String prohledatMistnost(){
+        return "Nasel jsi:";
     }
-    public void prohledatMistnost(){
+    public boolean moveTo(Room room){
 
+        return true;
     }
 }
