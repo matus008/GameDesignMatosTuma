@@ -6,5 +6,6 @@ public class Meg extends Npc {
     @Override
     public void setPromuv() {
 
+
     }
 }

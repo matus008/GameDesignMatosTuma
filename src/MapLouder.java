@@ -10,7 +10,7 @@ public class MapLouder {
     private static int currentRoom = 1;
 
     public boolean loud(){
-        try(BufferedReader bf = new BufferedReader(new FileReader("src\\Map.txt"))) {
+        try(BufferedReader bf = new BufferedReader(new FileReader("src\\Mapa"))) {
             String line;
             while((line  = bf.readLine()) != null){
                 System.out.println("funguje");
@@ -44,7 +44,15 @@ public class MapLouder {
 
     }
 
-    public static int getCurrentRoom() {
+    public static HashMap<Integer, Room> getStreetMap() {
+        return streetMap;
+    }
+
+    public  int getCurrentRoom() {
         return currentRoom;
+    }
+
+    public MapLouder() {
+        loud();
     }
 }

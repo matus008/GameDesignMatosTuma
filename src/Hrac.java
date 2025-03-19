@@ -25,7 +25,7 @@ public class Hrac {
     public String prohledatMistnost(Room room){
         return "Nasel jsi:";
     }
-    public boolean moveTo(Room room){
+    public boolean moveTo(int koste){
 
         return true;
     }

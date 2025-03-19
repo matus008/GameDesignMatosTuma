@@ -9,7 +9,7 @@ public class Clevland extends Npc {
     }
 
     @Override
-    public String getPromuv() {
-        return super.getPromuv();
+    public String getPromuv1() {
+        return super.getPromuv1();
     }
 }

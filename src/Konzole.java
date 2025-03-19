@@ -3,6 +3,7 @@ import java.util.Queue;
 import java.util.Scanner;
 
 public class Konzole {
+    private MapLouder mapLouder;
     private boolean exit = false;
     private Scanner sc;
     private HashMap<String, Command> komandy;
@@ -17,6 +18,7 @@ public class Konzole {
     private final Joye joye = new Joye("joye");
     private final Clevland clevland = new Clevland("clevland");
     private final Quagmiere quagmiere = new Quagmiere("quagmiere");
+
 
     public Konzole(MapLouder svet) {
         this.svet = svet;
@@ -41,7 +43,7 @@ public class Konzole {
 
         komandy.put("prohledat", new Prohledat());
 
-        //komandy.put("presun", new Presun( , hrac  ));
+        komandy.put("presun", new Presun( hrac, mapLouder  ));
 
         komandy.put("pouzitKladivo", new PouzitPredmet(kladivo, hrac));
         komandy.put("pouzitKlic", new PouzitPredmet(klíč, hrac));
@@ -50,7 +52,7 @@ public class Konzole {
         komandy.put("exit", new Exit());
     }
     public void start(){
-        System.out.println("Vítej ve hře! Zadej příkaz:");
+        System.out.println("Cpak chces delat? Zadej příkaz:");
         sc = new Scanner(System.in);
         while (!exit) {
             System.out.print("> ");
@@ -67,6 +69,6 @@ public class Konzole {
                 exit = true;
             }
         }
-        System.out.println("Hra ukončena.");
+        System.out.println("Skoncil si.");
     }
 }
