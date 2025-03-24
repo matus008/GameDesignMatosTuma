@@ -6,20 +6,22 @@ public class Joye extends Npc {
 
     @Override
     public void setPromuv() {
-        super.setPromuv("Ahoj, jsem Joye. Jak ti mohu pomoci?");
+        super.setPromuv("Ahoj, co potřebuješ?");
     }
 
     @Override
     public String odpoved(int volba) {
         switch (volba) {
             case 1:
-                return "Joye říká: 'Nikdo podezřelý se neobjevil v okolí.'";
+                return "Nikdo podezřelý, ale něco mi na tom všem nesedí...";
             case 2:
-                return "Joye říká: 'Mám se v pořádku, děkuji.'";
+                return "Mám se dobře, díky za optání.";
             case 3:
-                return "Joye říká: 'O vraždě nic nevím, ale mám pocit, že Peter něco skrývá.'";
+                return "O vraždě nic nevím, ale Herbert se mi zdá podivný.";
+            case 4:
+                return "Rozhovor končí, měj se!";
             default:
-                return "Neznámá volba. Zkus to znovu.";
+                return "Neplatná volba. Zkus to znovu.";
         }
     }
 }

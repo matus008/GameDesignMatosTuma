@@ -2,25 +2,25 @@ public class Herbert extends Npc {
     public Herbert(String jmeno) {
         super(jmeno);
     }
-
-    @Override
     public void setPromuv() {
-        super.setPromuv("Ahoj, jsem Herbert. Jak ti mohu pomoci?");
+        super.setPromuv("Ahooj mladence, jak ti mohu pomoct?");
     }
 
     @Override
     public String odpoved(int volba) {
         switch (volba) {
             case 1:
-                return "";
+                return "Mám s tvým bratrem dobrý vztah, ale občas mě štve jeho chování.";
             case 2:
-                return "";
+                return "Ve středu jsem byl na procházce v parku, byl to klidný den.";
             case 3:
-                return "";
+                return "Meg? Neviděl jsem ji už nějakou dobu, ale možná je u Quagmire.";
             case 4:
-                return "";
+                return "Papa doufam ze se jeste uvidime.";
             default:
-                return "";
+                return "Neplatná volba. Zkus to znovu.";
         }
     }
+
+
 }
