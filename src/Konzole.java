@@ -1,5 +1,4 @@
 import java.util.HashMap;
-import java.util.Queue;
 import java.util.Scanner;
 
 public class Konzole {
