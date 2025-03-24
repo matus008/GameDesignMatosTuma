@@ -12,11 +12,11 @@ public class Peter extends Npc {
     public String odpoved(int volba) {
         switch (volba) {
             case 1:
-                return "Nikdy jsem neviděl nic podezřelého, ale měl bys zkontrolovat Quagmire.";
+                return "Pozoroval jsem, že Quagmire se choval podezřele, když se řešily Herbertovy chvíle s Chrisem.";
             case 2:
-                return "Dneska jsem byl na pivu s Joe, všechno v pohodě.";
+                return "Během dne jsem slyšel, jak se mluvilo o Quagmireově neklidu kvůli tomu, jak Herbert tráví čas s Chrisem.";
             case 3:
-                return "Vím, že si někdo pohrál s Chrisem. Bylo to brutální.";
+                return "Mám pocit, že Quagmire byl motivován závistí, což by mohlo vysvětlovat, proč by mohl něco takového udělat.";
             case 4:
                 return "Tak se měj, uvidíme se později.";
             default:

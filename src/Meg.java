@@ -10,17 +10,14 @@ public class Meg extends Npc {
 
     @Override
     public String odpoved(int volba) {
-        switch (volba) {
-            case 1:
-                return "Nikdy jsem neviděla nic podezřelého.";
-            case 2:
-                return "Mám se dobře, jsem ráda, že se mě ptáš.";
-            case 3:
-                return "O vraždě nic nevím, ale Cleveland se mi zdá divný.";
-            case 4:
-                return "Tak zase někdy, měj se.";
-            default:
-                return "Neplatná volba. Zkus to znovu.";
-        }
+        return switch (volba) {
+            case 1 ->
+                    "Nikdy jsem nic podezřelého neviděla, ale slyšela jsem, že Quagmire měl neustále problém s Herbertovým vztahem s Chrisem.";
+            case 2 -> "Jsem v pohodě, ale věci kolem mě se zdají být komplikované – hlavně kvůli té zášti Quagmirea.";
+            case 3 ->
+                    "Myslím, že Quagmire nemohl přijmout, že Herbert trávil tolik času s Chrisem. To by mohl být klíč k celé věci.";
+            case 4 -> "Tak zase někdy, měj se.";
+            default -> "Neplatná volba. Zkus to znovu.";
+        };
     }
 }

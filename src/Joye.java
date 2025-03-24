@@ -13,11 +13,11 @@ public class Joye extends Npc {
     public String odpoved(int volba) {
         switch (volba) {
             case 1:
-                return "Nikdo podezřelý, ale něco mi na tom všem nesedí...";
+                return "Viděla jsem, jak se Quagmire neklidně potuloval, když se mluvilo o tom, kolik času Herbert tráví s Chrisem.";
             case 2:
-                return "Mám se dobře, díky za optání.";
+                return "Cítím se docela fajn, ale slyšela jsem, že Quagmire byl fakt podrážděný kvůli tomu vztahu.";
             case 3:
-                return "O vraždě nic nevím, ale Herbert se mi zdá podivný.";
+                return "Mám podezření, že právě Quagmire mohl mít něco společného s tím, co se stalo – byl totiž dost žárlivý.";
             case 4:
                 return "Rozhovor končí, měj se!";
             default:

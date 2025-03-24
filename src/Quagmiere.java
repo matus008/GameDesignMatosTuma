@@ -1,5 +1,4 @@
 public class Quagmiere extends Npc {
-
     public Quagmiere(String jmeno) {
         super(jmeno);
     }
@@ -11,17 +10,13 @@ public class Quagmiere extends Npc {
 
     @Override
     public String odpoved(int volba) {
-        switch (volba) {
-            case 1:
-                return "Nikdo podezřelý, ale něco mi říká, že bys měl zkontrolovat Herberta.";
-            case 2:
-                return "Byl jsem na párty, jinak nic zvláštního.";
-            case 3:
-                return "O vraždě nevím, ale Herbert se choval divně.";
-            case 4:
-                return "To bylo všechno, měj se!";
-            default:
-                return "Neplatná volba. Zkus to znovu.";
-        }
+        return switch (volba) {
+            case 1 -> "Co? Já? To je naprostý nesmysl!";
+            case 2 -> "Já jsem byl jen u párty, nic podezřelého se nedělo.";
+            case 3 ->
+                    "No, možná jsem byl trošku rozrušený... Ale to neznamená, že bych něco udělal. Prostě jsem nemohl přijmout, jak moc čas Herbert tráví s Chrisem.";
+            case 4 -> "To bylo všechno, měj se!";
+            default -> "Neplatná volba. Zkus to znovu.";
+        };
     }
 }
