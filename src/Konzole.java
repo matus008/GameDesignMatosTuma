@@ -43,7 +43,7 @@ public class Konzole {
 
         komandy.put("prohledat", new Prohledat());
 
-        komandy.put("presun", new Presun( hrac, mapLouder  ));
+        komandy.put("presun", new Presun(svet));
 
         komandy.put("pouzitKladivo", new PouzitPredmet(kladivo, hrac));
         komandy.put("pouzitKlic", new PouzitPredmet(klíč, hrac));
@@ -52,7 +52,7 @@ public class Konzole {
         komandy.put("exit", new Exit());
     }
     public void start(){
-        System.out.println("Cpak chces delat? Zadej příkaz:");
+        System.out.println("Copak chces delat? Zadej příkaz:");
         sc = new Scanner(System.in);
         while (!exit) {
             System.out.print("> ");

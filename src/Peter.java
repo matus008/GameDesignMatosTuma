@@ -4,6 +4,11 @@ public class Peter extends Npc {
     }
 
     @Override
+    public String odpoved(int volba) {
+        return "";
+    }
+
+    @Override
     public void setPromuv() {
 
     }

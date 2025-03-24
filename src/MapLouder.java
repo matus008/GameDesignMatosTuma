@@ -1,5 +1,4 @@
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ public class MapLouder {
         try(BufferedReader bf = new BufferedReader(new FileReader("src\\Mapa"))) {
             String line;
             while((line  = bf.readLine()) != null){
-                System.out.println("funguje");
+
                 String[] lines = line.split(";");
                 String name = lines[1];
                 int number = Integer.parseInt(lines[0]);
@@ -28,19 +27,23 @@ public class MapLouder {
         }
         return false;
     }
-    public static  boolean go(int roomID){
-        Room rom = streetMap.get(currentRoom);
-        if (streetMap.containsKey(roomID)) {
-            for (int posibl : rom.getPossibles()) {
-                if (posibl == roomID) {
-                    currentRoom = roomID;
-                    System.out.println(currentRoom);
-                    System.out.println("presun funguje");
-                    return true;
-                }
-            }
+    public String go(int roomID){
+        Room current = streetMap.get(currentRoom);
+
+        if (current == null) {
+            return "Chyba: Neplatná aktuální místnost!";
         }
-        return false;
+
+        if (!streetMap.containsKey(roomID)) {
+            return "Tato místnost neexistuje.";
+        }
+
+        if (!current.getPossibles().contains(roomID)) {
+            return "Nemůžeš se tam přesunout z aktuální místnosti.";
+        }
+
+        currentRoom = roomID;
+        return "Přesunul ses do: " + streetMap.get(currentRoom).getRoomName();
 
     }
 

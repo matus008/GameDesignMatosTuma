@@ -4,6 +4,11 @@ public class Meg extends Npc {
     }
 
     @Override
+    public String odpoved(int volba) {
+        return "";
+    }
+
+    @Override
     public void setPromuv() {
 
 

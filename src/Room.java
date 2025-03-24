@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public class Room {
-    private String roomName;
-    private ArrayList <Integer> possibles;
-    private int roomNumber;
+    private final String roomName;
+    public final ArrayList <Integer> possibles;
+    private final int roomNumber;
 
     public Room(String roomName, ArrayList<Integer> possibles, int roomNumber) {
         this.roomName = roomName;
