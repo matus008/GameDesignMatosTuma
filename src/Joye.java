@@ -11,17 +11,13 @@ public class Joye extends Npc {
 
     @Override
     public String odpoved(int volba) {
-        switch (volba) {
-            case 1:
-                return "Viděla jsem, jak se Quagmire neklidně potuloval, když se mluvilo o tom, kolik času Herbert tráví s Chrisem.";
-            case 2:
-                return "Cítím se docela fajn, ale slyšela jsem, že Quagmire byl fakt podrážděný kvůli tomu vztahu.";
-            case 3:
-                return "Mám podezření, že právě Quagmire mohl mít něco společného s tím, co se stalo – byl totiž dost žárlivý.";
-            case 4:
-                return "Rozhovor končí, měj se!";
-            default:
-                return "Neplatná volba. Zkus to znovu.";
-        }
+        return switch (volba) {
+            case 1 -> "No jasne ze vim tady mas klyce. Hlavne o tom nikomu nic nerikej.";
+            case 2 -> "Pohodka hele, ale az uvidis tveho tatu tak mu rekni ze dneska do hospody nejedu.";
+            case 3 ->
+                    "Stojim si za tim, že právě Quagmire v tom bude mit prsty, byl dost žárlivej..";
+            case 4 -> "Tak zase nekdy a pak mi vrat ty klyce nekdy.";
+            default -> "Neplatná volba. Zkus to znovu.";
+        };
     }
 }

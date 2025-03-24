@@ -5,18 +5,18 @@ public class Peter extends Npc {
 
     @Override
     public void setPromuv() {
-        super.setPromuv("Ahoj, co chceš?");
+        super.setPromuv("Cau Stewie jak to jde ? ");
     }
 
     @Override
     public String odpoved(int volba) {
         switch (volba) {
             case 1:
-                return "Pozoroval jsem, že Quagmire se choval podezřele, když se řešily Herbertovy chvíle s Chrisem.";
+                return "No na zahrade prece zkus se tam porozhlidnout.";
             case 2:
-                return "Během dne jsem slyšel, jak se mluvilo o Quagmireově neklidu kvůli tomu, jak Herbert tráví čas s Chrisem.";
+                return "Vubec nevim, potrebuju ted ale chili cas o samote.";
             case 3:
-                return "Mám pocit, že Quagmire byl motivován závistí, což by mohlo vysvětlovat, proč by mohl něco takového udělat.";
+                return "Nevim ale my ho rozhodne nemame.";
             case 4:
                 return "Tak se měj, uvidíme se později.";
             default:

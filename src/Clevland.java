@@ -12,7 +12,7 @@ public class Clevland extends Npc {
     public String odpoved(int volba) {
         switch (volba) {
             case 1:
-                return "Nikoho sem nevidel, ale Herbert je mi podezřelý.";
+                return "Nikoho sem nevidel, ale Quagmire je mi podezřelý. Videl sem ho se poslendi doubou dost zaobyrat tvoji sestrou.";
             case 2:
                 return "Docela pohoda, až na projekty z IT.";
             case 3:

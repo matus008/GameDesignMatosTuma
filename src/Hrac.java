@@ -17,6 +17,24 @@ public class Hrac {
     public Room getCurrentRoom() {
         return currentRoom;
     }
+    // dodelat jake itemy se najdou v jakych mistnostech
+    public String prohledatMistnost(Room room) {
+        room = currentRoom;
+        switch (room.getRoomNumber() ){
+            case 1:
+                inventar.add();
+                return "Nasel jsi tyto predmety:" + ;
+
+            case 2:
+                inventar.add();
+                return "Nasel jsi tyto predmety:" + ;
+            case 3:
+                inventar.add();
+                return "Nasel jsi tyto predmety:" + ;
+            case 4:
+        }
+        return "Nasel jsi " + inventar.toString();
+    }
 
 
     public boolean useItem(Item item) {
@@ -48,7 +66,7 @@ public class Hrac {
 
     public String zobrazInventar() {
         if (inventar.isEmpty()) {
-            return "Tvůj inventář je prázdný.";
+            return "Tvůj inventář je prázdný.Quagmire";
         }
         String result = "V inventáři máš: ";
         for (Item i : inventar) {

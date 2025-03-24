@@ -11,10 +11,10 @@ public class Quagmiere extends Npc {
     @Override
     public String odpoved(int volba) {
         return switch (volba) {
-            case 1 -> "Co? Já? To je naprostý nesmysl!";
-            case 2 -> "Já jsem byl jen u párty, nic podezřelého se nedělo.";
+            case 1 -> "Co? Já? Nevim od vcerejsiho vecera sem ji nevidel.";
+            case 2 -> "No nemuzu misim se doma neceho zbavit jeste.";
             case 3 ->
-                    "No, možná jsem byl trošku rozrušený... Ale to neznamená, že bych něco udělal. Prostě jsem nemohl přijmout, jak moc čas Herbert tráví s Chrisem.";
+                    "uh...Ja sk-k-k-klep nemam hele.";
             case 4 -> "To bylo všechno, měj se!";
             default -> "Neplatná volba. Zkus to znovu.";
         };

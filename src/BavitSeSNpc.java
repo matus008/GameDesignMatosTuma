@@ -18,34 +18,34 @@ public class BavitSeSNpc implements Command {
     private void inicializaceMoznosti() {
         if (npc instanceof Clevland) {
             moznosti.put(1, "Máš tušení, kdo mohl udělat tu věc?");
-            moznosti.put(2, "Jak se ti vede s těmi IT projekty?");
-            moznosti.put(3, "Slyšel jsem, že jsi viděl Quagmire. Můžeš to potvrdit?");
-            moznosti.put(4, "Rozloučit se.");
+            moznosti.put(2, "Jak se mas dneska M");
+            moznosti.put(3, "Nevis jeste neco dalsiho o mem bratrovy ? ");
+            moznosti.put(4, "Tak cau musim jit dal hledat dukazy. ");
         } else if (npc instanceof Herbert) {
             moznosti.put(1, "Jaký máš vztah s mým bratrem Chrisem?");
-            moznosti.put(2, "Kde jsi byl minulou středu, kdy se to stalo?");
+            moznosti.put(2, "Kde jsi byl minulou středu, kdyz se to stalo?");
             moznosti.put(3, "Můžeš mi říct něco o mé sestře Meg?");
-            moznosti.put(4, "Ukončit rozhovor.");
+            moznosti.put(4, "Tak cau musim jit dal hledat dukazy.");
         } else if (npc instanceof Joye) {
-            moznosti.put(1, "Co víš o posledních událostech?");
+            moznosti.put(1, "Nevis jak bych se mohl dostat to domu Quegmire ?");
             moznosti.put(2, "Jak se dnes cítíš?");
-            moznosti.put(3, "Viděla jsi něco neobvyklého?");
-            moznosti.put(4, "Ukončit konverzaci.");
+            moznosti.put(3, "Neiděl jsi něco divnyho posledni dobou? ");
+            moznosti.put(4, "Tak cau musim jit dal hledat dukazy.");
         } else if (npc instanceof Meg) {
-            moznosti.put(1, "Máš nějaké podezření na někoho?");
-            moznosti.put(2, "Co se stalo v poslední době?");
-            moznosti.put(3, "Jak se ti daří v práci?");
-            moznosti.put(4, "Rozloučit se.");
+            moznosti.put(1, "Cau segra kde ses prosimte ? ");
+            moznosti.put(2, "Stalo se ti neco? ");
+            moznosti.put(3, "Kde jsi byla kdyz se ti to stalo?");
+            moznosti.put(4, "Tak cau drz se posnazim se ti pomoct.");
         } else if (npc instanceof Peter) {
-            moznosti.put(1, "Co jsi dělal v den vraždy?");
-            moznosti.put(2, "Jak se ti vede, kámo?");
-            moznosti.put(3, "Máš nějaké informace o této záhadě?");
-            moznosti.put(4, "Ukončit konverzaci.");
+            moznosti.put(1, "Nevis kde mame kladivo a krovinorez ? ");
+            moznosti.put(2, "Kdy si myslis ze by to mohl udelat tato ? ");
+            moznosti.put(3, "Nevis kdo tady ma studenej sklep hele ?");
+            moznosti.put(4, "Tak cau musim jit dal hledat dukazy.");
         } else if (npc instanceof Quagmiere) {
-            moznosti.put(1, "Máš nějaké informace o podezřelých?");
-            moznosti.put(2, "Co ti říkají, že se děje ve městě?");
-            moznosti.put(3, "Jak se cítíš ohledně toho, co se stalo?");
-            moznosti.put(4, "Rozloučit se.");
+            moznosti.put(1, "Nevis neco o moji sestre ? ");
+            moznosti.put(2, "Tata se ptal, jestli vecer plati pivo ? ");
+            moznosti.put(3, "Nemuzu se podivaat natvuj sklep mame projekt ve skole na to. ");
+            moznosti.put(4, "Uvudime se zas jindy zatim ahoj.");
         }
     }
 

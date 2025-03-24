@@ -32,15 +32,15 @@ public class Konzole {
         Hrac hrac = new Hrac();
         komandy = new HashMap<>();
 
-        komandy.put("mluvitSBrianem", new BavitSeSNpc(brian));
-        komandy.put("mluvitSHerbertem", new BavitSeSNpc(herbert));
-        komandy.put("mluvitSMeg", new BavitSeSNpc(meg));
-        komandy.put("mluvitSPeterem", new BavitSeSNpc(peter));
-        komandy.put("mluvitSJoye", new BavitSeSNpc(joye));
-        komandy.put("mluvitSClevlandem", new BavitSeSNpc(clevland));
-        komandy.put("mluvitSQuagmirem", new BavitSeSNpc(quagmiere));
+        komandy.put("zavolatBrian", new BavitSeSNpc(brian));
+        komandy.put("zavolatHerbert", new BavitSeSNpc(herbert));
+        komandy.put("zavolatMeg", new BavitSeSNpc(meg));
+        komandy.put("zavolatPeter", new BavitSeSNpc(peter));
+        komandy.put("zavolatJoye", new BavitSeSNpc(joye));
+        komandy.put("zavolatClevland", new BavitSeSNpc(clevland));
+        komandy.put("zavolatQuagmire", new BavitSeSNpc(quagmiere));
 
-        komandy.put("prohledat", new Prohledat());
+        komandy.put("prohledat", new Prohledat(svet));
 
         komandy.put("presun", new Presun(svet));
 

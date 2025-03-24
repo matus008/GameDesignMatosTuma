@@ -3,6 +3,9 @@ public class Prohledat implements Command {
     private Room lokace;
     private Hrac hrac;
 
+    public Prohledat(MapLouder mapa) {
+
+    }
 
     @Override
     public String Execute() {

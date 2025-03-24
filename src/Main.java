@@ -4,7 +4,5 @@ public class Main {
         MapLouder m = new MapLouder();
         Konzole k = new Konzole(m);
         k.start();
-
-
     }
 }

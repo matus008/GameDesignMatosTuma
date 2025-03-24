@@ -5,18 +5,18 @@ public class Meg extends Npc {
 
     @Override
     public void setPromuv() {
-        super.setPromuv("Ahoj, co chceš?");
+        super.setPromuv("No konecne mam signal ahoj Stewie...");
     }
 
     @Override
     public String odpoved(int volba) {
         return switch (volba) {
             case 1 ->
-                    "Nikdy jsem nic podezřelého neviděla, ale slyšela jsem, že Quagmire měl neustále problém s Herbertovým vztahem s Chrisem.";
-            case 2 -> "Jsem v pohodě, ale věci kolem mě se zdají být komplikované – hlavně kvůli té zášti Quagmirea.";
+                    "Vubec nevim je tady tma a zima rekla bych ze nekdy ve sklepe.";
+            case 2 -> "Nekdo me unesl a omracil konecne jsem se probrala.";
             case 3 ->
-                    "Myslím, že Quagmire nemohl přijmout, že Herbert trávil tolik času s Chrisem. To by mohl být klíč k celé věci.";
-            case 4 -> "Tak zase někdy, měj se.";
+                    "Na ulici vcera vecer";
+            case 4 -> "Prosim pomoc mi.";
             default -> "Neplatná volba. Zkus to znovu.";
         };
     }
