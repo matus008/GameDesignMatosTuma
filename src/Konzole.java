@@ -2,11 +2,10 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Konzole {
-    private MapLouder mapLouder;
+    private MapLouder svet;
     private boolean exit = false;
     private Scanner sc;
     private HashMap<String, Command> komandy;
-    private MapLouder svet;
     private Kladivo kladivo;
     private Klíč klíč;
     private Křovinořez křovinořez;
@@ -17,19 +16,20 @@ public class Konzole {
     private final Joye joye = new Joye("joye");
     private final Clevland clevland = new Clevland("clevland");
     private final Quagmiere quagmiere = new Quagmiere("quagmiere");
+    private Hrac hrac;
 
 
-    public Konzole(MapLouder svet) {
-        this.svet = svet;
+    public Konzole() {
+        hrac = new Hrac();
+        kladivo = new Kladivo("kladivo");
+        klíč = new Klíč("klic");
+        křovinořez = new Křovinořez("krovinorez");
+        svet = new MapLouder(hrac);
         inicializace();
-
     }
 
-    public void executeCommand(){
-    }
 
     public void inicializace(){
-        Hrac hrac = new Hrac();
         komandy = new HashMap<>();
 
         komandy.put("zavolatBrian", new BavitSeSNpc(brian));
@@ -40,7 +40,7 @@ public class Konzole {
         komandy.put("zavolatClevland", new BavitSeSNpc(clevland));
         komandy.put("zavolatQuagmire", new BavitSeSNpc(quagmiere));
 
-        komandy.put("prohledat", new Prohledat(svet));
+        komandy.put("prohledat", new Prohledat(hrac, svet));
 
         komandy.put("presun", new Presun(svet));
 
@@ -50,8 +50,9 @@ public class Konzole {
 
         komandy.put("exit", new Exit());
     }
+
     public void start(){
-        System.out.println("Copak chces delat? Zadej příkaz:");
+        System.out.println("Copak chceš dělat? Zadej příkaz:");
         sc = new Scanner(System.in);
         while (!exit) {
             System.out.print("> ");
@@ -68,6 +69,6 @@ public class Konzole {
                 exit = true;
             }
         }
-        System.out.println("Skoncil si.");
+        System.out.println("Skončil sis.");
     }
 }

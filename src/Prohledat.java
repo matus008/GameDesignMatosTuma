@@ -1,19 +1,33 @@
+
+
 public class Prohledat implements Command {
 
-    private Room lokace;
+
+
     private Hrac hrac;
+    private MapLouder svet;
 
-    public Prohledat(MapLouder mapa) {
-
+    public Prohledat(Hrac hrac, MapLouder svet ) {
+        this.hrac = hrac;
+        this.svet = svet;
     }
 
-    @Override
     public String Execute() {
-        return "Prohledáváš: " + lokace.getRoomName() + hrac.prohledatMistnost(this.lokace);
+        // Získání aktuální místnosti hráče
+        Room currentRoom = hrac.getCurrentRoom();
+
+        // Pokud hráč není v žádné místnosti
+        if (currentRoom == null) {
+            return "Nejsi v žádné místnosti.";
+        }
+
+        // Předání MapLouder (ne Room) do metody prohledání
+        return "Prohledáváš: " + currentRoom.getRoomName() + "\n" + hrac.prohledatMistnost(svet);
     }
 
     @Override
     public boolean exit() {
         return false;
     }
+
 }

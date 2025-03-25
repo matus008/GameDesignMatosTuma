@@ -6,7 +6,8 @@ import java.util.HashMap;
 
 public class MapLouder {
     private static HashMap<Integer, Room> streetMap = new HashMap<>();
-    private static int currentRoom = 1;
+    private static int currentRoom = 3;
+    private Hrac hrac;
 
     public boolean loud(){
         try(BufferedReader bf = new BufferedReader(new FileReader("src\\Mapa"))) {
@@ -27,7 +28,7 @@ public class MapLouder {
         }
         return false;
     }
-    public String go(int roomID){
+    public String go(int roomID) {
         Room current = streetMap.get(currentRoom);
 
         if (current == null) {
@@ -43,8 +44,12 @@ public class MapLouder {
         }
 
         currentRoom = roomID;
-        return "Přesunul ses do: " + streetMap.get(currentRoom).getRoomName();
 
+        // Získání nové místnosti z mapy a nastavení jako aktuální místnost pro hráče
+        Room novaMístnost = streetMap.get(currentRoom);
+        hrac.setCurrentRoom(novaMístnost);  // Ujistíme se, že tuto metodu voláme správně
+
+        return "Přesunul ses do: " + streetMap.get(currentRoom).getRoomName();
     }
 
     public static HashMap<Integer, Room> getStreetMap() {
@@ -55,8 +60,11 @@ public class MapLouder {
         return currentRoom;
     }
 
-    public MapLouder() {
+    public MapLouder(Hrac hrac) {
+        this.hrac = hrac;
         loud();
+        // Nastavíme aktuální místnost hráče podle statické hodnoty currentRoom (např. 3)
+        hrac.setCurrentRoom(streetMap.get(currentRoom));
     }
 
 }
