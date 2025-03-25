@@ -52,6 +52,8 @@ public class Konzole {
     }
 
     public void start(){
+        System.out.println("Vítej ve hře! Zde je mapa místností a jejich propojení:");
+        svet.zobrazeniCelkoveMapy();
         System.out.println("Copak chceš dělat? Zadej příkaz:");
         sc = new Scanner(System.in);
         while (!exit) {
@@ -67,6 +69,14 @@ public class Konzole {
 
             if (input.equals("exit")) {
                 exit = true;
+            }
+
+
+            System.out.println(svet.zobrazMapu());
+
+            if (hrac.jeHraDokoncena()) {
+                System.out.println("Gratuluji! Hru jsi dokončil.");
+                break;
             }
         }
         System.out.println("Skončil sis.");

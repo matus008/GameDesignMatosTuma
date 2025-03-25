@@ -14,7 +14,7 @@ public class PouzitPredmet implements Command {
             if (used) {
                 return "Použil jsi předmět: " + predmet.getNazevVeci() + ".";
             } else {
-                return "Nepodařilo se použít " + predmet.getNazevVeci() + ".";
+                return "Nepodařilo se použít " + predmet.getNazevVeci() + ".(zkus to treba na nejakou skrytou zed a treba ji zboris)";
             }
         } else {
             return "Předmět " + predmet.getNazevVeci() + " nemáš v inventáři.";

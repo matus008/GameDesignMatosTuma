@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 public class Presun implements Command {
-    private MapLouder mapa; // Uložení instance MapLouder
+    private MapLouder mapa;
     private Hrac hrac;
     private Scanner sc;
 

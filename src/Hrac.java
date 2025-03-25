@@ -5,6 +5,11 @@ public class Hrac {
     private ArrayList<Item> inventar;
     private String jmeno;
     private Room currentRoom;
+    private boolean naselVsechnyDukazy;
+    private boolean mluvilSeVsemiNpc;
+    private boolean vstoupilDoMistnosti5;
+    private boolean naselMeg;
+    private boolean vrahJeQuagmire;
 
     public Hrac() {
         inventar = new ArrayList<>();
@@ -26,7 +31,6 @@ public class Hrac {
             return "Nejsi v žádné místnosti.";
         }
 
-        // Zde už prohledáváme aktuální místnost hráče
         HashMap<Integer, Item[]> lootTable = new HashMap<>();
         lootTable.put(3, new Item[]{ new Křovinořez("krovinorez"), new Kladivo("kladivo") });
         lootTable.put(5, new Item[]{ new Důkaz("dukaz") });
@@ -42,7 +46,9 @@ public class Hrac {
                 addItem(item);
                 nalezeneVeci.append(item.getNazevVeci()).append(", ");
             }
-
+            if (room.getRoomNumber() == 8){
+                System.out.println("Nasel jsi mrtvolu tvoji sestry Meg. (Rychle utec nez si te Quegmire vsimne)");
+            }
             return "Našel jsi: " + nalezeneVeci.substring(0, nalezeneVeci.length() - 2);
         }
 
@@ -84,5 +90,47 @@ public class Hrac {
             result += i.getNazevVeci() + " ";
         }
         return result;
+    }
+    public void nastavNaselVsechnyDukazy(boolean naselVsechnyDukazy) {
+        this.naselVsechnyDukazy = naselVsechnyDukazy;
+    }
+
+    public boolean maVsechnyDukazy() {
+        return naselVsechnyDukazy;
+    }
+
+    public void nastavMluvilSeVsemiNpc(boolean mluvilSeVsemiNpc) {
+        this.mluvilSeVsemiNpc = mluvilSeVsemiNpc;
+    }
+
+    public boolean mluvilSeVsemiNpc() {
+        return mluvilSeVsemiNpc;
+    }
+
+    public void nastavVstoupilDoMistnosti5(boolean vstoupilDoMistnosti5) {
+        this.vstoupilDoMistnosti5 = vstoupilDoMistnosti5;
+    }
+
+    public boolean vstoupilDoMistnosti5() {
+        return vstoupilDoMistnosti5;
+    }
+
+    public void nastavNaselMeg(boolean naselMeg) {
+        this.naselMeg = naselMeg;
+    }
+
+    public boolean naselMeg() {
+        return naselMeg;
+    }
+
+    public void nastavVrahJeQuagmire(boolean vrahJeQuagmire) {
+        this.vrahJeQuagmire = vrahJeQuagmire;
+    }
+
+    public boolean jeVrahQuagmire() {
+        return vrahJeQuagmire;
+    }
+    public boolean jeHraDokoncena() {
+        return naselVsechnyDukazy && mluvilSeVsemiNpc && vstoupilDoMistnosti5 && naselMeg && vrahJeQuagmire;
     }
 }

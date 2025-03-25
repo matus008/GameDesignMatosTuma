@@ -12,8 +12,8 @@ public class Room {
         this.roomName = roomName;
         this.possibles = possibles;
         this.roomNumber = roomNumber;
-        this.locked = locked;
-        this.requiredItem = requiredItem;
+        this.locked = false;
+        this.requiredItem = null;
         this.items = new ArrayList<>();
     }
 
@@ -33,6 +33,10 @@ public class Room {
         return locked;
     }
 
+    public void setLocked(boolean locked) {
+        this.locked = locked;
+    }
+
     public void unlock() {
         this.locked = false;
     }
@@ -41,19 +45,19 @@ public class Room {
         return requiredItem;
     }
 
+    public void setRequiredItem(String requiredItem) {
+        this.requiredItem = requiredItem;
+    }
 
     public void addItem(Item item) {
         items.add(item);
     }
 
-
     public boolean removeItem(Item item) {
         return items.remove(item);
     }
 
-
     public ArrayList<Item> getItems() {
         return items;
     }
-
 }

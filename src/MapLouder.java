@@ -13,20 +13,41 @@ public class MapLouder {
         try(BufferedReader bf = new BufferedReader(new FileReader("src\\Mapa"))) {
             String line;
             while((line  = bf.readLine()) != null){
-
                 String[] lines = line.split(";");
                 String name = lines[1];
                 int number = Integer.parseInt(lines[0]);
-                ArrayList <Integer> possibles = new ArrayList<>();
+                ArrayList<Integer> possibles = new ArrayList<>();
                 for (String part : lines[2].split(",")) {
                     possibles.add(Integer.parseInt(part));
                 }
-                streetMap.put(number, new Room( name, possibles,number));
+                Room room = new Room(name, possibles, number);
+                streetMap.put(number, room);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return false;
+
+
+        for (Room room : streetMap.values()) {
+            switch(room.getRoomNumber()){
+                case 5:
+                    room.setLocked(true);
+                    room.setRequiredItem("kladivo");
+                    break;
+                case 10:
+                    room.setLocked(true);
+                    room.setRequiredItem("krovinorez");
+                    break;
+                case 8:
+                    room.setLocked(true);
+                    room.setRequiredItem("klyc");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        return true;
     }
     public String go(int roomID) {
         Room current = streetMap.get(currentRoom);
@@ -43,13 +64,22 @@ public class MapLouder {
             return "Nemůžeš se tam přesunout z aktuální místnosti.";
         }
 
+        Room targetRoom = streetMap.get(roomID);
+
+        if(targetRoom.isLocked()){
+            if(!hrac.hasItem(targetRoom.getRequiredItem())){
+                return "Místnost " + targetRoom.getRoomName() + " je zamčená. Potřebuješ " + targetRoom.getRequiredItem() + ".";
+            } else {
+
+                targetRoom.unlock();
+            }
+        }
+
         currentRoom = roomID;
-
-        // Získání nové místnosti z mapy a nastavení jako aktuální místnost pro hráče
         Room novaMístnost = streetMap.get(currentRoom);
-        hrac.setCurrentRoom(novaMístnost);  // Ujistíme se, že tuto metodu voláme správně
+        hrac.setCurrentRoom(novaMístnost);
 
-        return "Přesunul ses do: " + streetMap.get(currentRoom).getRoomName();
+        return "Přesunul ses do: " + novaMístnost.getRoomName();
     }
 
     public static HashMap<Integer, Room> getStreetMap() {
@@ -63,8 +93,35 @@ public class MapLouder {
     public MapLouder(Hrac hrac) {
         this.hrac = hrac;
         loud();
-        // Nastavíme aktuální místnost hráče podle statické hodnoty currentRoom (např. 3)
+
         hrac.setCurrentRoom(streetMap.get(currentRoom));
+    }
+    public String zobrazMapu() {
+        Room currentRoom = streetMap.get(this.currentRoom);
+        if (currentRoom == null) {
+            return "Aktuální místnost neexistuje!";
+        }
+
+        ArrayList<Integer> dostupneMistnosti = currentRoom.getPossibles();
+
+        StringBuilder mapa = new StringBuilder();
+        mapa.append("Jsi v místnosti: ").append(currentRoom.getRoomName()).append("\n");
+        mapa.append("Můžeš jít do těchto místností: ");
+
+        for (Integer roomID : dostupneMistnosti) {
+            Room room = streetMap.get(roomID);
+            mapa.append(room.getRoomName()).append(" ");
+        }
+
+        return mapa.toString();
+    }
+    public void zobrazeniCelkoveMapy() {
+        System.out.println("Mapu hry tvoří následující místnosti a jejich propojení:");
+        for (Room room : MapLouder.getStreetMap().values()) {
+            String propojeni = room.getPossibles().toString().replace("[", "").replace("]", "");
+            //konkretne s radkem 121 sem se nechal inspirovat internetem
+            System.out.println("Místnost " + room.getRoomNumber() + ": " + room.getRoomName() + " - propojena s místnostmi: " + propojeni);
+        }
     }
 
 }
