@@ -39,11 +39,8 @@ public class Konzole {
         komandy.put("zavolatJoye", new BavitSeSNpc(joye));
         komandy.put("zavolatClevland", new BavitSeSNpc(clevland));
         komandy.put("zavolatQuagmire", new BavitSeSNpc(quagmiere));
-
         komandy.put("prohledat", new Prohledat(hrac, svet));
-
         komandy.put("presun", new Presun(svet));
-
         komandy.put("pouzitKladivo", new PouzitPredmet(kladivo, hrac));
         komandy.put("pouzitKlic", new PouzitPredmet(klíč, hrac));
         komandy.put("pouzitKrovinorez", new PouzitPredmet(křovinořez, hrac));
@@ -54,10 +51,19 @@ public class Konzole {
     public void start(){
         System.out.println("Vítej ve hře! Zde je mapa místností a jejich propojení:");
         svet.zobrazeniCelkoveMapy();
+        System.out.println("----------------------------------");
+        System.out.println("Pribeh: Ses ve svete Familyguy a zjistilo se ze nekdo zavrazdil tveho bratra a tvoje sestra je nezvestna." +
+                " Potrebujes splnit vsechny ukoly aby jsi dosahl sveho. Hodne stesti!");
+        System.out.println("Ukoly: Najdi vsechny dukazy, promluv si se vsemi obyvateli mesta, dostan se do vsech mistnosti a hlavne ODLAH VRAHA!");
+        System.out.println("Toto jso tve moznosti ktere ve hre muzes delat:" +
+                " presun, prohledat, zavolat + clovek kteremu chces zavolat napr. zavolatMeg, pouzit + predmet napr. pouzitKladivo");
+
+
         System.out.println("Copak chceš dělat? Zadej příkaz:");
         sc = new Scanner(System.in);
         while (!exit) {
-            System.out.print("> ");
+            System.out.println("----------------------------------");
+            System.out.print("prikaz - - > ");
             String input = sc.nextLine().trim();
 
             if (komandy.containsKey(input)) {
@@ -75,7 +81,7 @@ public class Konzole {
             System.out.println(svet.zobrazMapu());
 
             if (hrac.jeHraDokoncena()) {
-                System.out.println("Gratuluji! Hru jsi dokončil.");
+                System.out.println("Gratuluji! Odhalil jsi ze za tim vsim byl Quagmire, ted se probouzis ze snu a jdes na snidani...");
                 break;
             }
         }

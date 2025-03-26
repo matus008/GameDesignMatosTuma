@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class MapLouder {
     private static HashMap<Integer, Room> streetMap = new HashMap<>();
-    private static int currentRoom = 3;
+    private static int currentRoom = 2;
     private Hrac hrac;
 
     public boolean loud(){
@@ -40,7 +40,7 @@ public class MapLouder {
                     break;
                 case 8:
                     room.setLocked(true);
-                    room.setRequiredItem("klyc");
+                    room.setRequiredItem("klic");
                     break;
                 default:
                     break;
@@ -116,7 +116,6 @@ public class MapLouder {
         return mapa.toString();
     }
     public void zobrazeniCelkoveMapy() {
-        System.out.println("Mapu hry tvoří následující místnosti a jejich propojení:");
         for (Room room : MapLouder.getStreetMap().values()) {
             String propojeni = room.getPossibles().toString().replace("[", "").replace("]", "");
             //konkretne s radkem 121 sem se nechal inspirovat internetem

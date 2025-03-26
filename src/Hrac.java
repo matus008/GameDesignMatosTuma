@@ -34,7 +34,7 @@ public class Hrac {
         HashMap<Integer, Item[]> lootTable = new HashMap<>();
         lootTable.put(3, new Item[]{ new Křovinořez("krovinorez"), new Kladivo("kladivo") });
         lootTable.put(5, new Item[]{ new Důkaz("dukaz") });
-        lootTable.put(8, new Item[]{ new Klíč("klyc") });
+        lootTable.put(6, new Item[]{ new Klíč("klic") });
         lootTable.put(9, new Item[]{ new Důkaz("dukaz") });
         lootTable.put(11, new Item[]{ new Důkaz("dukaz") });
 
@@ -46,7 +46,7 @@ public class Hrac {
                 addItem(item);
                 nalezeneVeci.append(item.getNazevVeci()).append(", ");
             }
-            if (room.getRoomNumber() == 8){
+            if (room.getRoomNumber() == 5){
                 System.out.println("Nasel jsi mrtvolu tvoji sestry Meg. (Rychle utec nez si te Quegmire vsimne)");
             }
             return "Našel jsi: " + nalezeneVeci.substring(0, nalezeneVeci.length() - 2);
