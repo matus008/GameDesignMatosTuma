@@ -18,7 +18,9 @@ public class Konzole {
     private final Quagmiere quagmiere = new Quagmiere("quagmiere");
     private Hrac hrac;
 
-
+    /**
+     * Konstruktor inicializuje hrace a herni svet
+     */
     public Konzole() {
         hrac = new Hrac();
         kladivo = new Kladivo("kladivo");
@@ -28,8 +30,10 @@ public class Konzole {
         inicializace();
     }
 
-
-    public void inicializace(){
+    /**
+     * Inicializuje dostupne prikazy ve hre
+     */
+    public void inicializace() {
         komandy = new HashMap<>();
 
         komandy.put("zavolatBrian", new BavitSeSNpc(brian));
@@ -44,22 +48,21 @@ public class Konzole {
         komandy.put("pouzitKladivo", new PouzitPredmet(kladivo, hrac));
         komandy.put("pouzitKlic", new PouzitPredmet(klíč, hrac));
         komandy.put("pouzitKrovinorez", new PouzitPredmet(křovinořez, hrac));
-
         komandy.put("exit", new Exit());
     }
 
-    public void start(){
-        System.out.println("Vítej ve hře! Zde je mapa místností a jejich propojení:");
+    /**
+     * Spousti hru a spracovava prikazy od hrace
+     */
+    public void start() {
+        System.out.println("Vitej ve hre Zde je mapa mistnosti a jejich propojeni");
         svet.zobrazeniCelkoveMapy();
         System.out.println("----------------------------------");
-        System.out.println("Pribeh: Ses ve svete Familyguy a zjistilo se ze nekdo zavrazdil tveho bratra a tvoje sestra je nezvestna." +
-                " Potrebujes splnit vsechny ukoly aby jsi dosahl sveho. Hodne stesti!");
-        System.out.println("Ukoly: Najdi vsechny dukazy, promluv si se vsemi obyvateli mesta, dostan se do vsech mistnosti a hlavne ODLAH VRAHA!");
-        System.out.println("Toto jso tve moznosti ktere ve hre muzes delat:" +
-                " presun, prohledat, zavolat + clovek kteremu chces zavolat napr. zavolatMeg, pouzit + predmet napr. pouzitKladivo");
+        System.out.println("Pribeh Ses ve svete Family Guy a zjistilo se ze nekdo zavrazdil tveho bratra a tvoje sestra je nezvestna Potrebujes splnit vsechny ukoly aby jsi dosahl sveho Hodne stesti");
+        System.out.println("Ukoly Najdi vsechny dukazy promluv si se vsemi obyvateli mesta dostan se do vsech mistnosti a hlavne ODHAL VRAHA");
+        System.out.println("Toto jsou tve moznosti ktere ve hre muzes delat presun prohledat zavolat + clovek kteremu chces zavolat napr zavolatMeg pouzit + predmet napr pouzitKladivo");
+        System.out.println("Copak chces delat Zadej prikaz");
 
-
-        System.out.println("Copak chceš dělat? Zadej příkaz:");
         sc = new Scanner(System.in);
         while (!exit) {
             System.out.println("----------------------------------");
@@ -70,21 +73,20 @@ public class Konzole {
                 String result = komandy.get(input).Execute();
                 System.out.println(result);
             } else {
-                System.out.println("Neznámý příkaz: " + input);
+                System.out.println("Neznamy prikaz " + input);
             }
 
             if (input.equals("exit")) {
                 exit = true;
             }
 
-
             System.out.println(svet.zobrazMapu());
 
             if (hrac.jeHraDokoncena()) {
-                System.out.println("Gratuluji! Odhalil jsi ze za tim vsim byl Quagmire, ted se probouzis ze snu a jdes na snidani...");
+                System.out.println("Gratuluji Odhalil jsi ze za tim vsim byl Quagmire ted se probouzis ze snu a jdes na snidani");
                 break;
             }
         }
-        System.out.println("Skončil sis.");
+        System.out.println("Skoncil sis");
     }
 }

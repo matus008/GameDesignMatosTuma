@@ -6,10 +6,18 @@ public class Presun implements Command {
     private Hrac hrac;
     private Scanner sc;
 
+    /**
+     * Konstruktor třídy Presun
+     * dostava objekt MapLouder obsahující mapu hry
+     */
     public Presun(MapLouder mapa) {
         this.mapa = mapa;
     }
 
+    /**
+     * Provádí přesun hráče do zvolené místnosti
+     * vraci zprávu o úspěšném nebo neúspěšném přesunu
+     */
     @Override
     public String Execute() {
         Scanner sc = new Scanner(System.in);
@@ -19,7 +27,7 @@ public class Presun implements Command {
             int roomID = Integer.parseInt(sc.nextLine());
             return mapa.go(roomID);
         } catch (NumberFormatException e) {
-            return "Do teto mistnosti nemuzes! zkus to znova";
+            return "Do této místnosti nemůžeš! Zkus to znovu.";
         }
     }
 

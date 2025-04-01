@@ -1,13 +1,20 @@
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * Třída reprezentující rozhovor s NPC ve hře.
+ */
 public class BavitSeSNpc implements Command {
     private final Npc npc;
     private boolean odejit = false;
     private final Map<Integer, String> moznosti;
 
+    /**
+     * Konstruktor inicializující NPC a možnosti rozhovoru.
+     *
+     * urci NPc se kterým hráč komunikuje
+     */
     public BavitSeSNpc(Npc npc) {
         this.npc = npc;
         this.npc.setPromuv();
@@ -15,6 +22,9 @@ public class BavitSeSNpc implements Command {
         inicializaceMoznosti();
     }
 
+    /**
+     * Inicializuje možnosti rozhovoru na základě typu NPC.
+     */
     private void inicializaceMoznosti() {
         if (npc instanceof Clevland) {
             moznosti.put(1, "Máš tušení, kdo mohl udělat tu věc?");
@@ -49,6 +59,10 @@ public class BavitSeSNpc implements Command {
         }
     }
 
+    /**
+     * Spustí rozhovor s NPC a umožní hráči vybírat možnosti.
+     * vraci výsledku rozhovoru.
+     */
     @Override
     public String Execute() {
         Scanner scanner = new Scanner(System.in);
@@ -77,10 +91,14 @@ public class BavitSeSNpc implements Command {
                 return "Končíš rozhovor s " + npc.getJmeno() + ".";
             }
         }
-
         return "Nashledanou!";
     }
 
+    /**
+     * Určuje, zda příkaz ukončuje hru.
+     *
+     * @return Vždy vrací false, protože rozhovor s NPC hru neukončuje.
+     */
     @Override
     public boolean exit() {
         return false;

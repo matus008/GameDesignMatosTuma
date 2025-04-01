@@ -11,20 +11,33 @@ public class Hrac {
     private boolean naselMeg;
     private boolean vrahJeQuagmire;
 
+    /**
+     * Konstruktor hráče inicializující inventář a aktuální místnost.
+     */
     public Hrac() {
         inventar = new ArrayList<>();
         currentRoom = null;
     }
 
+    /**
+     * Nastaví aktuální místnost hráče
+     * do které hráč vstoupil.
+     */
     public void setCurrentRoom(Room room) {
         this.currentRoom = room;
     }
 
+    /**
+     * Vrátí aktuální místnost hráče.
+     */
     public Room getCurrentRoom() {
         return currentRoom;
     }
 
-    // s touto metodou mi pomohla umela inteligence
+    /**
+     * Prohledá aktuální místnost a přidá nalezené předměty do inventáře.
+     * A vypise uzivateli co vsechno nasel.
+     */
     public String prohledatMistnost(MapLouder mapa) {
         Room room = mapa.getStreetMap().get(mapa.getCurrentRoom());
         if (room == null) {
@@ -32,11 +45,11 @@ public class Hrac {
         }
 
         HashMap<Integer, Item[]> lootTable = new HashMap<>();
-        lootTable.put(3, new Item[]{ new Křovinořez("krovinorez"), new Kladivo("kladivo") });
-        lootTable.put(5, new Item[]{ new Důkaz("dukaz") });
-        lootTable.put(6, new Item[]{ new Klíč("klic") });
-        lootTable.put(9, new Item[]{ new Důkaz("dukaz") });
-        lootTable.put(11, new Item[]{ new Důkaz("dukaz") });
+        lootTable.put(3, new Item[]{new Křovinořez("krovinorez"), new Kladivo("kladivo")});
+        lootTable.put(5, new Item[]{new Důkaz("dukaz")});
+        lootTable.put(6, new Item[]{new Klíč("klic")});
+        lootTable.put(9, new Item[]{new Důkaz("dukaz")});
+        lootTable.put(11, new Item[]{new Důkaz("dukaz")});
 
         if (lootTable.containsKey(room.getRoomNumber())) {
             Item[] items = lootTable.get(room.getRoomNumber());
@@ -46,7 +59,7 @@ public class Hrac {
                 addItem(item);
                 nalezeneVeci.append(item.getNazevVeci()).append(", ");
             }
-            if (room.getRoomNumber() == 5){
+            if (room.getRoomNumber() == 5) {
                 System.out.println("Nasel jsi mrtvolu tvoji sestry Meg. (Rychle utec nez si te Quegmire vsimne)");
             }
             return "Našel jsi: " + nalezeneVeci.substring(0, nalezeneVeci.length() - 2);
@@ -55,14 +68,23 @@ public class Hrac {
         return "V této místnosti nic není.";
     }
 
+    /**
+     * Použije předmět z inventáře
+     */
     public boolean useItem(Item item) {
         return inventar.remove(item);
     }
 
+    /**
+     * Přidá předmět do inventáře hráče.
+     */
     public void addItem(Item item) {
         inventar.add(item);
     }
 
+    /**
+     * Odebere předmět z inventáře podle názvu.
+     */
     public void removeItem(String itemName) {
         for (int i = 0; i < inventar.size(); i++) {
             if (inventar.get(i).getNazevVeci().equals(itemName)) {
@@ -72,6 +94,9 @@ public class Hrac {
         }
     }
 
+    /**
+     * Zkontroluje, zda hráč má určitej predmet v inventáři.
+     */
     public boolean hasItem(String itemName) {
         for (Item i : inventar) {
             if (i.getNazevVeci().equals(itemName)) {
@@ -81,6 +106,9 @@ public class Hrac {
         return false;
     }
 
+    /**
+     * Zobrazí obsah inventáře hráče.
+     */
     public String zobrazInventar() {
         if (inventar.isEmpty()) {
             return "Tvůj inventář je prázdný.";
@@ -91,6 +119,8 @@ public class Hrac {
         }
         return result;
     }
+
+    // Metody pro nastavení a kontrolu stavů hráče
     public void nastavNaselVsechnyDukazy(boolean naselVsechnyDukazy) {
         this.naselVsechnyDukazy = naselVsechnyDukazy;
     }
@@ -130,6 +160,12 @@ public class Hrac {
     public boolean jeVrahQuagmire() {
         return vrahJeQuagmire;
     }
+
+    /**
+     * Určuje, zda hráč splnil všechny podmínky pro dokončení hry.
+
+     * vraci true, pokud hráč splnil všechny podmínky, jinak false.
+     */
     public boolean jeHraDokoncena() {
         return naselVsechnyDukazy && mluvilSeVsemiNpc && vstoupilDoMistnosti5 && naselMeg && vrahJeQuagmire;
     }
