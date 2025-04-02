@@ -1,3 +1,5 @@
+import Game.Hrac;
+import Game.Item;
 
 public class PouzitPredmet implements Command {
     private Item predmet;

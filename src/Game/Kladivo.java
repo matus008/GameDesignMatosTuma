@@ -1,5 +1,6 @@
+package Game;
 
-public class Kladivo extends Item{
+public class Kladivo extends Item {
 
     public Kladivo(String nazevVeci) {
         super(nazevVeci);

@@ -1,4 +1,7 @@
 
+import Game.Hrac;
+import Game.MapLouder;
+
 import java.util.Scanner;
 
 public class Presun implements Command {
@@ -8,7 +11,7 @@ public class Presun implements Command {
 
     /**
      * Konstruktor třídy Presun
-     * dostava objekt MapLouder obsahující mapu hry
+     * dostava objekt Game.MapLouder obsahující mapu hry
      */
     public Presun(MapLouder mapa) {
         this.mapa = mapa;
@@ -21,7 +24,7 @@ public class Presun implements Command {
     @Override
     public String Execute() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Do které místnosti se chceš přesunout? Zadej číslo: ");
+        System.out.println("Do které místnosti se chceš přesunout? Zadej číslo mistnosti: ");
 
         try {
             int roomID = Integer.parseInt(sc.nextLine());

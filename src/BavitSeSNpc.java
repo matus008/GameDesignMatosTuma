@@ -1,3 +1,11 @@
+import Npc.Npc;
+import Npc.Brian;
+import Npc.Clevland;
+import Npc.Herbert;
+import Npc.Meg;
+import Npc.Joye;
+import Npc.Peter;
+import Npc.Quagmiere;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -34,7 +42,7 @@ public class BavitSeSNpc implements Command {
         } else if (npc instanceof Herbert) {
             moznosti.put(1, "Jaký máš vztah s mým bratrem Chrisem?");
             moznosti.put(2, "Kde jsi byl minulou středu, kdyz se to stalo?");
-            moznosti.put(3, "Můžeš mi říct něco o mé sestře Meg?");
+            moznosti.put(3, "Můžeš mi říct něco o mé sestře Npc.Npc.Meg?");
             moznosti.put(4, "Tak cau musim jit dal hledat dukazy.");
         } else if (npc instanceof Joye) {
             moznosti.put(1, "Nevis jak bych se mohl dostat to domu Quegmire ?");
@@ -56,7 +64,13 @@ public class BavitSeSNpc implements Command {
             moznosti.put(2, "Tata se ptal, jestli vecer plati pivo ? ");
             moznosti.put(3, "Nemuzu se podivaat natvuj sklep mame projekt ve skole na to. ");
             moznosti.put(4, "Uvudime se zas jindy zatim ahoj.");
+        }else if( npc instanceof Brian){
+            moznosti.put(1, "Nevis jak bych se mohhl dostat do domu Quegmire ?");
+            moznosti.put(2, "Nevidel jsi Npc.Npc.Meg? potrebuju se ji na neco zeptat.");
+            moznosti.put(3, "Kde vubec Chrise nasli ? ");
+            moznosti.put(4, "Tak se uvidie na hristi.");
         }
+
     }
 
     /**

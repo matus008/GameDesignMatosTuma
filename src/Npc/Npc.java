@@ -1,3 +1,5 @@
+package Npc;
+
 public abstract class Npc {
     private final String jmeno;
     private String promuv1;

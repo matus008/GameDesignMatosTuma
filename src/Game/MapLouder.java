@@ -1,3 +1,5 @@
+package Game;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -30,7 +32,9 @@ public class MapLouder {
             throw new RuntimeException(e);
         }
 
-        // Nastaveni zamcenych mistnosti a klicovych predmetu
+        /**
+         * Nastaveni zamcenych mistnosti a predmentu potrebnych pro jejich otevreni
+          */
         for (Room room : streetMap.values()) {
             switch (room.getRoomNumber()) {
                 case 5:
@@ -108,7 +112,7 @@ public class MapLouder {
     }
 
     /**
-     * Konstruktor pro MapLouder inicializuje mapu a nastavi startovni mistnost pro hrace
+     * Konstruktor pro Game.MapLouder inicializuje mapu a nastavi startovni mistnost pro hrace
      */
     public MapLouder(Hrac hrac) {
         this.hrac = hrac;

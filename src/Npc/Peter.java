@@ -1,3 +1,5 @@
+package Npc;
+
 public class Peter extends Npc {
     public Peter(String jmeno) {
         super(jmeno);

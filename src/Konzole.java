@@ -1,6 +1,16 @@
 import java.util.HashMap;
 import java.util.Scanner;
 
+import Game.*;
+import Npc.Brian;
+import Npc.Clevland;
+import Npc.Herbert;
+import Npc.Meg;
+import Npc.Joye;
+import Npc.Peter;
+import Npc.Quagmiere;
+
+
 public class Konzole {
     private MapLouder svet;
     private boolean exit = false;
@@ -9,13 +19,13 @@ public class Konzole {
     private Kladivo kladivo;
     private Klíč klíč;
     private Křovinořez křovinořez;
-    private final Brian brian = new Brian("brian");
-    private final Herbert herbert = new Herbert("herbert");
-    private final Meg meg = new Meg("meg");
-    private final Peter peter = new Peter("peter");
-    private final Joye joye = new Joye("joye");
-    private final Clevland clevland = new Clevland("clevland");
-    private final Quagmiere quagmiere = new Quagmiere("quagmiere");
+    private Brian brian = new Brian("brian");
+    private Herbert herbert = new Herbert("herbert");
+    private Meg meg = new Meg("meg");
+    private Peter peter = new Peter("peter");
+    private Joye joye = new Joye("joye");
+    private Clevland clevland = new Clevland("clevland");
+    private Quagmiere quagmiere = new Quagmiere("quagmiere");
     private Hrac hrac;
 
     /**
@@ -58,7 +68,7 @@ public class Konzole {
         System.out.println("Vitej ve hre Zde je mapa mistnosti a jejich propojeni");
         svet.zobrazeniCelkoveMapy();
         System.out.println("----------------------------------");
-        System.out.println("Pribeh Ses ve svete Family Guy a zjistilo se ze nekdo zavrazdil tveho bratra a tvoje sestra je nezvestna Potrebujes splnit vsechny ukoly aby jsi dosahl sveho Hodne stesti");
+        System.out.println("Pribeh-> Ses ve svete Family Guy a zjistilo se ze nekdo zavrazdil tveho bratra a tvoje sestra je nezvestna Potrebujes splnit vsechny ukoly aby jsi dosahl sveho Hodne stesti");
         System.out.println("Ukoly Najdi vsechny dukazy promluv si se vsemi obyvateli mesta dostan se do vsech mistnosti a hlavne ODHAL VRAHA");
         System.out.println("Toto jsou tve moznosti ktere ve hre muzes delat presun prohledat zavolat + clovek kteremu chces zavolat napr zavolatMeg pouzit + predmet napr pouzitKladivo");
         System.out.println("Copak chces delat Zadej prikaz");

@@ -1,3 +1,5 @@
+package Game;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -60,7 +62,7 @@ public class Hrac {
                 nalezeneVeci.append(item.getNazevVeci()).append(", ");
             }
             if (room.getRoomNumber() == 5) {
-                System.out.println("Nasel jsi mrtvolu tvoji sestry Meg. (Rychle utec nez si te Quegmire vsimne)");
+                System.out.println("Nasel jsi mrtvolu tvoji sestry Npc.Npc.Meg. (Rychle utec nez si te Quegmire vsimne)");
             }
             return "Našel jsi: " + nalezeneVeci.substring(0, nalezeneVeci.length() - 2);
         }

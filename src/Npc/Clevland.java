@@ -1,3 +1,5 @@
+package Npc;
+
 public class Clevland extends Npc {
     public Clevland(String jmeno) {
         super(jmeno);

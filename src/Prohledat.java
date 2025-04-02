@@ -1,4 +1,6 @@
-
+import Game.Hrac;
+import Game.MapLouder;
+import Game.Room;
 
 public class Prohledat implements Command {
 

@@ -1,4 +1,6 @@
-public class Křovinořez extends Item{
+package Game;
+
+public class Křovinořez extends Item {
 
 
     public Křovinořez(String nazevVeci) {
