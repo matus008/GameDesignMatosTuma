@@ -98,5 +98,6 @@ public class Konzole {
             }
         }
         System.out.println("Skoncil sis");
+        sc.close();
     }
 }

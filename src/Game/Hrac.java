@@ -12,6 +12,7 @@ public class Hrac {
     private boolean vstoupilDoMistnosti5;
     private boolean naselMeg;
     private boolean vrahJeQuagmire;
+    private int pocitadloDukazu = 0;
 
     /**
      * Konstruktor hráče inicializující inventář a aktuální místnost.
@@ -62,12 +63,24 @@ public class Hrac {
                 nalezeneVeci.append(item.getNazevVeci()).append(", ");
             }
             if (room.getRoomNumber() == 5) {
-                System.out.println("Nasel jsi mrtvolu tvoji sestry Npc.Npc.Meg. (Rychle utec nez si te Quegmire vsimne)");
+                System.out.println("Nasel jsi mrtvolu tvoji sestry Meg. (Rychle utec nez si te Quegmire vsimne)");
+                vstoupilDoMistnosti5 = true;
+                naselMeg = true;
+                vrahJeQuagmire = true;
             }
             return "Našel jsi: " + nalezeneVeci.substring(0, nalezeneVeci.length() - 2);
         }
+        for (int i = 0 ; i < inventar.size() ; i++) {
+            if (inventar.get(i).getNazevVeci().equals("dukaz")) {
+                pocitadloDukazu ++;
+            }
+        }
+        if (pocitadloDukazu == 3) {
+            naselVsechnyDukazy = true;
+            mluvilSeVsemiNpc = true;
+        }
 
-        return "V této místnosti nic není.";
+        return "V této místnosti nic není." + zobrazInventar();
     }
 
     /**
@@ -169,6 +182,10 @@ public class Hrac {
      * vraci true, pokud hráč splnil všechny podmínky, jinak false.
      */
     public boolean jeHraDokoncena() {
-        return naselVsechnyDukazy && mluvilSeVsemiNpc && vstoupilDoMistnosti5 && naselMeg && vrahJeQuagmire;
+        if (naselVsechnyDukazy && mluvilSeVsemiNpc && vstoupilDoMistnosti5 && naselMeg && vrahJeQuagmire){
+            return true;
+        }else {
+            return false;
+        }
     }
 }
